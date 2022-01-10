@@ -7,5 +7,5 @@ export const Row = styled.div`
 export const Cell = styled.div<{ isAlive: boolean }>`
   width: 50px;
   height: 50px;
-  background-color: ${(props) => (props.isAlive ? 'green' : 'red')};
+  background-color: ${(props) => (props.isAlive ? 'black' : '#ccc')};
 `;

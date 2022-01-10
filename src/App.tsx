@@ -6,7 +6,7 @@ import { Cell, Row } from './App.styled';
 import { createBoard } from './utils/createBoard';
 
 function App() {
-  const [board, setBoard] = useState(createBoard(6, 4));
+  const [board, setBoard] = useState(createBoard(8, 8));
 
   const toggleCell = (rowIndex: number, columnIndex: number) => {
     const nextState = produce(board, (draft) => {
@@ -30,6 +30,7 @@ function App() {
           </Row>
         );
       })}
+      <button>Generate</button>
     </div>
   );
 }

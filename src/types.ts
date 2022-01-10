@@ -1,1 +1,1 @@
-export type CellState = "dead" | "alive";
+export type Board = Array<Array<boolean>>;
