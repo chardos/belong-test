@@ -18,8 +18,8 @@ export const getNeighbourCount = (
 
   return directions.reduce((acc, curr) => {
     const [rowDirection, columnDirection] = curr;
-    const isAlive =
-      board[rowIndex + rowDirection][columnIndex + columnDirection];
+    const row = board[rowIndex + rowDirection];
+    const isAlive = row?.[columnIndex + columnDirection];
 
     if (isAlive) {
       return acc + 1;
