@@ -1,27 +1,24 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import { createBoard } from "./utils/createBoard";
+import React, { useState } from 'react';
+
+import './App.css';
+import { Cell, Row } from './App.styled';
+import { CellState } from './types';
+import { createBoard } from './utils/createBoard';
 
 function App() {
-  const board = createBoard(6, 4);
+  const [board, setBoard] = useState(createBoard(6, 4));
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {board.map((row) => {
+        return (
+          <Row>
+            {row.map((cell: CellState) => (
+              <Cell isAlive={cell === 'alive'} />
+            ))}
+          </Row>
+        );
+      })}
     </div>
   );
 }
