@@ -1,8 +1,11 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { createBoard } from "./utils/createBoard";
 
 function App() {
+  const board = createBoard(6, 4);
+
   return (
     <div className="App">
       <header className="App-header">
